@@ -12,7 +12,7 @@
 #define SCREEN_WIDTH 1024
 #define SCREEN_HEIGHT 720
 
-#define FOV 90
+#define FOV 60
 #define FOV_RAD (FOV * 0.0174532925)
 
 #define MOVE_SPEED 0.10

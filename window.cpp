@@ -133,12 +133,24 @@ void cWindow::drawTexturedVerticalLine( int x, int h, SDL_Surface* pSurface, dou
     rSrc.y = 0;
     rSrc.w = 1;
     rSrc.h = pSurface->h;
-    
+
     rDest.x = x;
-    rDest.y = RENDER_H_HALF - h/2;
     rDest.w = 1;
-    rDest.h = h;
     
+    if (h > RENDER_H)
+    {
+	rSrc.h = pSurface->h - (RENDER_H - h);
+	rSrc.y = pSurface->h - rSrc.h;
+
+	rDest.y = 0;
+	rDest.h = RENDER_H;
+    }
+    else
+    {
+	rDest.y = RENDER_H_HALF - h/2;
+	rDest.h = h;
+    }
+        
     SDL_SetSurfaceColorMod( pSurface, gamma*255, gamma*255, gamma*255);
     SDL_BlitScaled( pSurface, &rSrc, pBuffer, &rDest );
 }

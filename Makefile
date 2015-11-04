@@ -1,7 +1,7 @@
 CC=g++
-CFLAGS=-O3 -fpermissive -O3 -g -c
-LDFLAGS=
-SOURCES=$(shell find | grep .cpp | cut -c 3- | tr '\n' ' ')
+CFLAGS=-O3 -fpermissive -O3 -g -c -I/usr/local/include
+LDFLAGS=-L/usr/local/lib
+SOURCES=$(shell find . | grep .cpp | cut -c 3- | tr '\n' ' ')
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=bin/raycast
 

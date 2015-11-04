@@ -98,7 +98,7 @@ int main( int argc, char** argv )
                 continue;
             
             double dDistance = cr.dDistance * cos( dAngle );
-            double dHeight = RENDER_H_HALF / dDistance;
+            double dHeight = (RENDER_H*0.75) / dDistance;
             double dGamma = clamp((dHeight / RENDER_H_HALF) * 500,0,255);
             if (cr.dNormal == 0 || (cr.dNormal > 3 && cr.dNormal < 4))
                 dGamma *= 0.75;
