@@ -14,4 +14,5 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	$(shell find . -name "*.o" -type f|xargs rm -f)
+	$(RM) *.o
+	$(RM) $(EXECUTABLE)
