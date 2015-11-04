@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-O3 -fpermissive -O3 -g -c -I/usr/local/include
 LDFLAGS=-L/usr/local/lib
-SOURCES=$(shell find . | grep .cpp | cut -c 3- | tr '\n' ' ')
+SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=bin/raycast
 
